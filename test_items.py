@@ -1,4 +1,4 @@
-import time
+from selenium.webdriver.support import expected_conditions as EC
 link = "http://selenium1py.pythonanywhere.com/{}/catalogue/coders-at-work_207/"
 
 
@@ -9,4 +9,4 @@ class TestOscarSandBox:
         #time.sleep(10)
         add_to_basket = browser.find_elements_by_css_selector("button.btn-add-to-basket")
 
-        assert len(add_to_basket) == 1, "Button add to basket not found"
+        assert EC.visibility_of(add_to_basket), "Button add to basket not found"
